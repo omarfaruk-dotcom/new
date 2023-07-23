@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/icon.png">
+    <title>Nested Education</title>
+    <link rel="stylesheet" href="css/Nested_education_loogin_page.css">
+</head>
+<body>
+    <div class="container">
+        <div class="blank">        </div>
+        <div class="logo">
+            <img src="img/logo.png" alt="Image Not Found">
+        </div>
+        <div class="blank">        </div>
+        <div class="login">
+            <p>
+                <form action="">
+                    <br><input type="text" placeholder="Enter Username" name="username">
+                    <br><br><input class="pass" type="password" id="password" placeholder="Enter Password">
+                    <input class="check" type="checkbox" onclick="togglePasswordVisibility()">
+                    <br><br><button class="signin">Sign In</button>
+                    <br><br><hr><a href="#" onclick="openForgetPasswordModal()">Forget Password</a>
+                    <br><br><button class="signup">Sign Up</button><br>
+                    <br>
+                </form>
+            </p>
+            <br>
+            <b><p class="feedback"><a href="feedback.html">Give Us Feedback</a></p></b>
+        </div>
+        <div class="blank"></div>
+    </div>
+    <div class="clear_div"></div>
+    <div>
+        <p class="frame">
+            <br><br><br><br><br>
+            How To Use
+            <br><br><iframe width="560" height="315" src="https://www.youtube.com/embed/_BwkPcw0mco" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </p>    
+    </div>
+    <div class="foot">
+        <footer><div class="blank"></div>
+            <a href="about_us.html">see us</a><br><div class="blank"></div>
+            <a href="create_account.html">create account</a><br><div class="blank"></div>
+            <a href="terms_and_conditions.html">terms and conditions</a><br><div class="blank"></div>
+            <a href="feedback.html">feedback</a><br><div class="blank"></div>
+            <a href="invite_link.html">invite</a><br><div class="blank"></div>
+        </footer>
+    </div>
+
+    <div class="modal" id="forgetPasswordModal">
+        <div class="modal-content">
+            <form action="send_email.php" method="post">
+                <!-- Forget Password form inputs -->
+                <br><br><input type="text" name="username" placeholder="Enter Username">
+                <br><br><input class="pass" type="password" id="password" placeholder="Enter Password">
+                <input class="check" type="checkbox" onclick="togglePasswordVisibility()">
+                <br><br><input type="date" name="date" placeholder="Enter Date Of Birth">
+                <br><br><input type="email" name="user_email" placeholder="Enter Your Email">
+                <br><br><input type="tel" name="phone" placeholder="Enter Phone Number">
+                <br><br><input type="text" name="name" placeholder="Favorite Name">
+                <br><br>
+                <button type="submit">Submit</button><br><br>
+                <button type="button" onclick="closeForgetPasswordModal()">Cancel</button><br><br>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openForgetPasswordModal() {
+            var modal = document.getElementById('forgetPasswordModal');
+            modal.style.display = 'block';
+        }
+
+        function closeForgetPasswordModal() {
+            var modal = document.getElementById('forgetPasswordModal');
+            modal.style.display = 'none';
+        }
+
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById('password');
+            passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
+        }
+    </script>
+</body>
+</html>
